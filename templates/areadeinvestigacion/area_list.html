@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Lista Estudiantes {% endblock %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for area in object_list %}
+		<tr>
+			<td>{{ area.id }}</td>
+			<td>{{ area.nombre }}</td>
+
+			<td>
+				<a class="btn btn-primary" href="{% url 'gruposinvestigacion:area_editar' area.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'gruposinvestigacion:area_eliminar' area.id %}">Eliminar</a>
+
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de Áreas</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

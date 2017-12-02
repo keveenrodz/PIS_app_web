@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Lista Directivos {% endblock %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Primer Apellido</td>
+			<td>Segundo Apellido</td>
+			<td>Cedula</td>
+			<td>Cargo</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for directivo in object_list %}
+		<tr>
+			<td>{{ directivo.id }}</td>
+			<td>{{ directivo.nombre }}</td>
+			<td>{{ directivo.primer_apellido }}</td>
+			<td>{{ directivo.segundo_apellido }}</td>
+			<td>{{ directivo.cedula }}</td>
+			<td>{{ directivo.cargo }}</td>
+
+			<td>
+				<a class="btn btn-primary" href="{% url 'persona:directivo_editar' directivo.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'persona:directivo_eliminar' directivo.id %}">Eliminar</a>
+
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de directivos</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

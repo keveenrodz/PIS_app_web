@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Eliminar Estudiante {% endblock %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h3>¿Desea Eliminar el registro de {{object.nombre}}?</h3>
+    <button class="btn btn-danger" type="submit">Si, eliminar</button>
+    <a class="btn btn-default" href="{% url 'persona:estudiante_listar' %}">Cancelar</a>
+</form>
+{% endblock %}

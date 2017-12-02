@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Lista Estudiantes {% endblock %}
+
+	<div class="col-lg-1">
+    <a class="btn btn-info btn-block" href="{% url 'persona:reporte_estudiante_excel' %}" >
+        <span class="glyphicon glyphicon-file"></span>
+    </a>
+	</div>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Primer Apellido</td>
+			<td>Segundo Apellido</td>
+			<td>Cedula</td>
+			<td>Área</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for estudiante in object_list %}
+		<tr>
+			<td>{{ estudiante.id }}</td>
+			<td>{{ estudiante.nombre }}</td>
+			<td>{{ estudiante.primer_apellido }}</td>
+			<td>{{ estudiante.segundo_apellido }}</td>
+			<td>{{ estudiante.cedula }}</td>
+			<td>{{ estudiante.area }}</td>
+
+			<td>
+				<a class="btn btn-primary" href="{% url 'persona:estudiante_editar' estudiante.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'persona:estudiante_eliminar' estudiante.id %}">Eliminar</a>
+
+			</td>
+		</tr>
+
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de Estudiantes</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

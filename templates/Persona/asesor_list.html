@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Lista Asesores {% endblock %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Primer Apellido</td>
+			<td>Segundo Apellido</td>
+			<td>Cedula</td>
+			<td>Grupo Invesigacion</td>
+		</tr>
+
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for asesor in object_list %}
+		<tr>
+			<td>{{ asesor.id }}</td>
+			<td>{{ asesor.nombre }}</td>
+			<td>{{ asesor.primer_apellido }}</td>
+			<td>{{ asesor.segundo_apellido }}</td>
+			<td>{{ asesor.cedula }}</td>
+			<td>{{ asesor.grupo_investigacion }}</td>
+
+			<td>
+				<a class="btn btn-primary" href="{% url 'persona:asesor_editar' asesor.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'persona:asesor_eliminar' asesor.id %}">Eliminar</a>
+
+			</td>
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay registros de Asesores</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Registro Proyecto {% endblock %}
+{% block content %}
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

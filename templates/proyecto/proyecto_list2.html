@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Lista Proyectos {% endblock %}
+<div class="col-lg-1">
+    <a class="btn btn-info btn-block" href="{% url 'proyecto:reporte_proyecto_excel' %}" >
+        <span class="glyphicon glyphicon-file"></span>
+    </a>
+</div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Fecha Inscripcion</td>
+			<td>Alumno</td>
+			<td>Tutor</td>
+			<td>Área</td>
+			<td>Comentario</td>
+			<td>Nota1</td>
+			<td>Nota2</td>
+			<td>Nota3</td>
+			<td>Nota4</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for proyecto in object_list %}
+		<tr>
+			<td>{{ proyecto.id }}</td>
+			<td>{{ proyecto.nombre }}</td>
+			<td>{{ proyecto.fecha_incripcion }}</td>
+			<td>{{ proyecto.alumno }}</td>
+			<td>{{ proyecto.profesor }}</td>
+			<td>{{ proyecto.area }}</td>
+			<td>{{ proyecto.comentario }}</td>
+			<td>{{ proyecto.nota1 }}</td>
+			<td>{{ proyecto.nota2 }}</td>
+			<td>{{ proyecto.nota3 }}</td>
+			<td>{{ proyecto.nota4 }}</td>
+
+			{%if proyecto.archivo.url != null%}
+				<td><a class="btn btn-info" href="{{ proyecto.archivo.url }}">Descargar</a></td>
+			{% else %}
+				<td><a class="btn btn-info" href="#">Descargar</a></td>
+			{% endif %}
+
+			<td>
+				<a class="btn btn-primary" href="{% url 'proyecto:proyecto_editar3' proyecto.id %}">Editar</a>
+
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de Proyectos</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

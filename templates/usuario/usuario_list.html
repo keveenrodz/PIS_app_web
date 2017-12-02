@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Lista Usuarios {% endblock %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>#</td>
+			<td>Nombre</td>
+			<td>Primer Apellido</td>
+			<td>Usuario</td>
+			<td>Correo</td>
+		</tr>
+
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for usuario in object_list %}
+		<tr>
+			<td>{{ usuario.id }}</td>
+			<td>{{ usuario.first_name }}</td>
+			<td>{{ usuario.last_name }}</td>
+			<td>{{ usuario.username }}</td>
+			<td>{{ usuario.email }}</td>
+
+
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h1>No hay registros de Usuarios</h1>
+		{% endif %}
+	</tbody>
+</table>
+{% endblock%}

@@ -1,0 +1,68 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% block title %} Vista Director {% endblock %}
+<p></p>
+ <div class="row">
+
+          <div class="col-sm-2" >
+            <div class="col-buttons">
+               <h2 style="text-align: center;">PIS Usuarios</h2>
+                <p></p>
+
+               <p><a class="btn btn-info btn-group-justified" href="{% url 'usuario:usuario_listar' %}" id="btn-editar-user">Listar</a></p>
+            </div>
+         </div>
+
+         <div class="col-sm-2" >
+            <div class="col-buttons">
+               <h2 style="text-align: center;">PIS Estudiante</h2>
+                <p></p>
+               <p><a class="btn btn-success active btn-group-justified" href="{% url 'persona:estudiante_crear' %}" id="btn-nuevo-est">Nuevo</a></p>
+               <p><a class="btn btn-warning btn-group-justified" href="{% url 'persona:estudiante_listar' %}" id="btn-editar-est">Editar / Eliminar</a></p>
+            </div>
+         </div>
+         <div class="col-sm-2">
+            <div class="col-buttons">
+               <h2 style="text-align: center;">PIS Profesor</h2>
+               <p><a class="btn btn-success active btn-group-justified" href="{% url 'persona:asesor_crear' %}" id="btn-nuevo-ase">Nuevo</a></p>
+               <p><a class="btn btn-warning btn-group-justified" href="{% url 'persona:asesor_listar' %}" id="btn-editar-ase">Editar / Eliminar</a></p>
+            </div>
+         </div>
+         <div class="col-sm-2">
+            <div class="col-buttons">
+               <h2 style="text-align: center;">PIS Directivo</h2>
+               <p><a class="btn btn-success active btn-group-justified" href="{% url 'persona:directivo_crear' %}" id="btn-nuevo-dir">Nuevo</a></p>
+               <p><a class="btn btn-warning btn-group-justified" href="{% url 'persona:directivo_listar' %}" id="btn-editar-dir">Editar / Eliminar</a></p>
+            </div>
+         </div>
+         <div class="col-sm-2">
+            <div class="col-buttons">
+               <h2 style="text-align: center;">PIS Proyectos</h2>
+               <p><a class="btn btn-success active btn-group-justified" href="{% url 'proyecto:proyecto_crear' %}" id="btn-nuevo-pr">Nuevo</a></p>
+               <p><a class="btn btn-warning btn-group-justified" href="{% url 'proyecto:proyecto_listar' %}" id="btn-editar-pr">Editar / Eliminar</a></p>
+            </div>
+         </div>
+         <div class="col-sm-2">
+            <div class="col-buttons">
+               <h2 style="text-align: center;">Área investigación</h2>
+               <p><a class="btn btn-success active btn-group-justified" href="{% url 'gruposinvestigacion:area_crear' %}" id="btn-nuevo-area">Nuevo</a></p>
+               <p><a class="btn btn-warning btn-group-justified" href="{% url 'gruposinvestigacion:area_listar' %}" id="btn-editar-area">Editar / Eliminar</a></p>
+            </div>
+         </div>
+         <div class="col-sm-2">
+            <div class="col-buttons">
+               <h2 style="text-align: center;">Grupo investigación</h2>
+               <p><a class="btn btn-success active btn-group-justified" href="{% url 'gruposinvestigacion:grupoinv_crear' %}" id="btn-nuevo-gi">Nuevo</a></p>
+               <p><a class="btn btn-warning btn-group-justified" href="{% url 'gruposinvestigacion:grupoinv_listar' %}" id="btn-editar-gi">Editar / Eliminar</a></p>
+            </div>
+         </div>
+
+
+ </div>
+
+
+
+{% endblock%}
+
+<!--<button type="button" class="btn btn-primary btn-lg" href="{% url 'persona:directivo_listar' %}">Estudiante</button>-->
