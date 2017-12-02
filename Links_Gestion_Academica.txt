@@ -1,0 +1,54 @@
+-Login
+
+http://127.0.0.1:8000
+
+- Listar, Crear, Actualizar, Eliminar Usuarios
+
+http://127.0.0.1:8000/usuario/registrar
+http://127.0.0.1:8000/usuario/listar
+http://127.0.0.1:8000/usuario/editar/#/ El numeral es el id key del registro
+http://127.0.0.1:8000/usuario/eliminar/#/ El numeral es el id key del registro
+
+- Administrador Django
+http://127.0.0.1:8000/admin/login/?next=/admin/
+
+- Listar, Crear, Actualizar, Eliminar Estudiante
+
+http://127.0.0.1:8000/persona/estudiante/nuevo
+http://127.0.0.1:8000/persona/estudiante/listar
+http://127.0.0.1:8000/persona/estudiante/editar/#/  El numeral es el id key del registro
+http://127.0.0.1:8000/persona/estudiante/eliminar/#/  El numeral es el id key del registro
+
+
+- Listar, Crear, Actualizar, Eliminar Asesor
+
+http://127.0.0.1:8000/persona/asesor/nuevo
+http://127.0.0.1:8000/persona/asesor/listar
+http://127.0.0.1:8000/persona/asesor/editar/#/ El numeral es el id key del registro
+http://127.0.0.1:8000/persona/asesor/eliminar/#/ El numeral es el id key del registro
+
+
+- Listar, Crear, Actualizar, Eliminar directivo
+
+http://127.0.0.1:8000/persona/directivo/vista 	La primera página que va a ver
+http://127.0.0.1:8000/persona/directivo/nuevo
+http://127.0.0.1:8000/persona/directivo/listar
+http://127.0.0.1:8000/persona/directivo/editar/#/ El numeral es el id key del registro
+http://127.0.0.1:8000/persona/directivo/eliminar/#/ El numeral es el id key del registro
+
+- Listar, Crear, Actualizar, Eliminar proyecto
+
+http://127.0.0.1:8000/proyecto/nuevo/
+http://127.0.0.1:8000/proyecto/listar
+http://127.0.0.1:8000/proyecto/editar/#/ El numeral es el id key del registro
+http://127.0.0.1:8000/proyecto/eliminar/#/ El numeral es el id key del registro
+
+- Listar, Crear, Actualizar, Eliminar Notas
+
+http://127.0.0.1:8000/notas/nuevo/
+http://127.0.0.1:8000/notas/listar
+http://127.0.0.1:8000/notas/editar/#/ El numeral es el id key del registro
+http://127.0.0.1:8000/notas/eliminar/#/ El numeral es el id key del registro
+
+
+
